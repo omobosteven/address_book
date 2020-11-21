@@ -1,0 +1,346 @@
+/* ===============================
+            BASE STYLES
+==================================*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  font-size: 62.5%;
+}
+
+ul {
+  list-style:  none;
+  margin-top: 0;
+}
+
+body { 
+  min-height: 100%;
+  background: radial-gradient(farthest-corner at top, #943368 0%,#732F6C 55%,#532c6d 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font: 300 1.6rem "Open Sans", sans-serif;
+}
+
+/* ================================
+          HEADER STYLES
+===================================*/
+
+h1.header {
+  font-family: 'Merienda';
+  font-size: 4.5rem;
+  width: 90%;
+  margin: 2.0rem auto 0;
+  text-align: center;
+}
+
+/* ================================
+          FORM STYLES
+===================================*/
+
+div#addAddress {
+  width: 80%;
+  margin: 0 auto;
+}
+
+div#addAddress form {
+  display: flex;
+  flex-direction: column;
+}
+
+div#addAddress p#error {
+  color: #FF5555;
+  font-size: 1.7rem;
+  font-style: italic;
+}
+
+/* ================================
+    FORM: INPUT FIELDS STYLES
+===================================*/
+
+div#addAddress div.inputFields {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div#addAddress input[name] {
+  border: 1px solid #fff;
+  height: 4.2rem;
+  padding-left: 2.4rem;
+  font: 300 2.0rem 'Open Sans', sans-serif;
+  color: #3b454d;
+  border-radius: 4.5rem;
+  margin-bottom: 2.0rem;
+}
+
+/* ================================
+    FORM: SUBMIT BUTTON STYLES
+===================================*/
+
+input#saveAddress {
+  width: 90%;
+  height: 4.8rem;
+  color: #fff;
+  font: 700 1.6rem 'Open Sans', sans-serif;
+  background-color: #b62474;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  border: 1px solid #b62474;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 1.5rem;
+  transition: all .5s ease;
+}
+
+input#saveAddress:active {
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
+}
+
+/* ================================
+    CONTACT LIST STYLES
+===================================*/
+
+div#contacts {
+  width: 90%;
+  margin: 50px auto 50px;
+}
+
+div#contacts h2 {
+  font-family: 'Merienda';
+}
+
+ul#contactList{
+  padding-left: 0; 
+}
+
+.contactDetails {
+  padding: 10px;
+  display: none;
+  font-weight: 600;
+  background-color: #8a1957;
+}
+
+h3.contactTitle {
+  display: flex;
+  margin-bottom: 0;
+  cursor: pointer;
+  background-color: #FBDAEB;
+  color: #8a1957;
+  padding: 5px;
+  border-radius: 5px 15px 0 0;
+  user-select: none
+}
+
+h3.contactTitle .cta-icon:first-of-type {
+  margin-left: auto;
+}
+h3.contactTitle .cta-icon:nth-of-type(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* ================================
+    CONTACT LIST: ICONS STYLES
+===================================*/
+
+ul#contactList h3:before {
+  font-family: 'Material Icons';
+  content: '\E853';
+  vertical-align: sub;
+  padding-right: 1.0rem;
+  font-size: 2.1rem;
+}
+
+div.contactDetails p:nth-child(1):before {
+  font-family: 'Material Icons';
+  content: '\E0C8';
+  padding-right: 1.0rem;
+  font-size: 2.0rem;
+  vertical-align: sub;
+}
+
+div.contactDetails p:nth-child(2):before {
+  font-family: 'Material Icons';
+  content: '\E0BE';
+  padding-right: 1.0rem;
+  font-size: 2.0rem;
+  vertical-align: sub;
+}
+
+div.contactDetails p:nth-child(3):before {
+  font-family: 'Material Icons';
+  content: '\E0CD';
+  padding-right: 1.0rem;
+  font-size: 2.0rem;
+  vertical-align: sub;
+}
+
+/* ================================
+    TOGGLE CLASS FOR CONTACT DETIALS
+===================================*/
+.active {
+  display: block;
+}
+
+
+/* ================================
+    MEDIA QUERIES STYLES
+===================================*/
+@media (min-width: 576px) {
+
+  h1.header {
+    font-size: 5.7rem;
+  }
+
+  input#saveAddress {
+    width: 90%;
+  }
+
+  div#contacts {
+    width: 80%;
+  }
+
+  h3.contactTitle {
+    height: 3.5rem;
+    padding-top: 7.5px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1.header {
+    font-size: 6.7rem;
+  }
+
+  div#addAddress p#error {
+    font-size: 1.6rem;
+    margin-left: 4.9rem;
+  }
+
+  input#saveAddress {
+    width: 90%;
+  }
+
+  div#addAddress div.inputFields {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  div#addAddress input[name] {
+    height: 4.8rem;
+    margin-bottom: 4.0rem;
+    width: 40%;
+  }
+
+  div#contacts {
+    width: 70%;
+  }
+
+  ul#contactList{
+    padding-left: 3.0rem; 
+  }
+}
+
+@media (min-width: 992px) {
+
+  input#saveAddress {
+    width: 50.0rem;
+  }
+
+  input#saveAddress:hover {
+    color: #fff;
+    background: none;
+    border: 1px solid #fff;
+  }
+
+  h3.contactTitle {
+    height: 3.2rem;
+    padding-top: 0.3rem;
+    font-size: 2.3rem;
+  }
+
+  div.contactDetails {
+    font-size: 1.8rem;
+  }
+
+  div.contactDetails p:nth-child(1):before {
+    font-size: 2.2rem;
+  }
+  
+  div.contactDetails p:nth-child(2):before {
+    font-size: 2.2rem;
+  }
+  
+  div.contactDetails p:nth-child(3):before {
+    font-size: 2.2rem;
+  }
+
+  ul#contactList h3:before {
+    font-size: 2.5rem;
+  }
+
+  ul#contactList li:first-of-type h3.contactTitle {
+    margin-top: 1.0rem;
+  }
+
+  div#contacts h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  h1.header {
+    word-spacing: 1.6rem;
+    letter-spacing: .8rem;
+  }
+
+  div#addAddress input[name] {
+    height: 4.8rem;
+    width: 23%;
+  }
+
+  div#addAddress {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  div#addAddress p#error {
+    align-self: center;
+  }
+
+  div#addAddress div.inputFields {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  input#saveAddress {
+    width: 30%;
+  }
+
+  h3.contactTitle {
+    height: 4.0rem;
+    padding-top: 0.5rem;
+    font-size: 2.5rem;
+  }
+
+  ul#contactList h3:before {
+    font-size: 3.0rem;
+  }
+
+  div#contacts {
+    margin-top: 6.0rem;
+  }
+
+  div#contacts h2 {
+    font-size: 3rem;
+  }
+}

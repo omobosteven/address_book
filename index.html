@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Address Book</title>
+  <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="header">Address Book</h1>
+
+  <div id="addAddress">
+    <form name="addAddressForm">
+      <p id="error"></p>
+      <div class="inputFields">
+        <input type="text" id="name" name="name" placeholder="Name:">
+
+        <input type="text" id="address" name="address" placeholder="Address:">
+  
+        <input type="email" id="email" name="email" placeholder="Email:">
+  
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number: ">
+      </div>
+
+      <input type="submit" id="saveAddress" value="Save">
+    </form>
+  </div>
+
+  <div id="contacts">
+    <h2>Contacts</h2>
+    <div id="contact">
+      <ul id="contactList">
+        <!-- <li>
+          <h3 class="contactTitle">Steven 
+            <i class="material-icons cta-icon">create</i>
+            <i class="material-icons cta-icon">remove_circle</i>
+          </h3>
+          <div class="contactDetails">
+            <p>10 ring road, Benin</p>
+            <p>steven_big@gmail.com</p>
+            <p>08067346142</p>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
