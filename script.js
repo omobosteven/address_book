@@ -13,9 +13,16 @@ let contactDetails;
 
 let contactsState = [];
 
-/**
- * @description Create New Contact List Item
- */
+const deleteContact = (event) => {
+  event.stopPropagation();
+  const filteredContactsState = contactsState.filter((contact) => {
+    return contact.id !== parseInt(event.target.dataset.id);
+  });
+  contactsState = [...filteredContactsState];
+  localStorage.setItem("contacts", JSON.stringify(contactsState));
+
+  event.target.parentElement.parentElement.remove();
+};
 
 const createNewContactElement = (contact) => {
   let listItem = document.createElement('li');
@@ -39,15 +46,14 @@ const createNewContactElement = (contact) => {
   editBtn.classList.add("material-icons", "cta-icon");
   deleteBtn.classList.add("material-icons", "cta-icon");
 
+  deleteBtn.setAttribute("data-id", contact.id);
+
   contactName.addEventListener('click', toggleContactDetails);
   editBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     console.log('edit')}
     );
-  deleteBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    console.log('delete')}
-  );
+  deleteBtn.addEventListener('click', deleteContact);
 
   contactName.append(editBtn, deleteBtn);
   listItem.append(contactName, contactDetails);
@@ -68,7 +74,7 @@ const addContact = (event) => {
         address: address.value,
         email: email.value,
         phoneNumber: phoneNumber.value,
-        id: contactsState.length+1
+        id: contactsState.length + 1
       }
 
   let validation = validateFormInput(contact);
