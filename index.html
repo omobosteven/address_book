@@ -9,19 +9,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 class="header">Address Book</h1>
+  <h1 class="header">Contact Book</h1>
 
   <div id="addAddress">
     <form name="addAddressForm">
       <p id="error"></p>
       <div class="inputFields">
-        <input type="text" id="name" name="name" placeholder="Name:">
-
-        <input type="text" id="address" name="address" placeholder="Address:">
+        <input type="text" id="name" name="name" placeholder="Name:" required>
   
-        <input type="email" id="email" name="email" placeholder="Email:">
+        <input type="email" id="email" name="email" placeholder="Email:" required>
   
-        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number: ">
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number: " required>
       </div>
 
       <input type="submit" id="saveAddress" value="Save">

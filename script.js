@@ -1,7 +1,6 @@
 let addressForm = document.forms.addAddressForm;
 
 let name = addressForm.elements.name;
-let address = addressForm.elements.address;
 let email = addressForm.elements.email;
 let phoneNumber = addressForm.elements.phoneNumber;
 
@@ -28,14 +27,12 @@ const createNewContactElement = (contact) => {
   let listItem = document.createElement('li');
   let contactDetails = document.createElement('div');
   let contactName = document.createElement('h3');
-  let contactAddress = document.createElement('p');
   let contactEmail = document.createElement('p');
   let contactPhoneNumber = document.createElement('p');
   let editBtn = document.createElement('i');
   let deleteBtn = document.createElement('i');
 
   contactName.textContent = contact.name;
-  contactAddress.textContent = contact.address;
   contactEmail.textContent = contact.email;
   contactPhoneNumber.textContent = contact.phoneNumber;
   editBtn.textContent = 'create';
@@ -57,7 +54,7 @@ const createNewContactElement = (contact) => {
 
   contactName.append(editBtn, deleteBtn);
   listItem.append(contactName, contactDetails);
-  contactDetails.append(contactAddress, contactEmail, contactPhoneNumber);
+  contactDetails.append(contactEmail, contactPhoneNumber);
 
   return listItem
 };
@@ -71,16 +68,15 @@ const addContact = (event) => {
 
   let contact = {
         name: name.value,
-        address: address.value,
         email: email.value,
         phoneNumber: phoneNumber.value,
         id: contactsState.length + 1
       }
 
-  let validation = validateFormInput(contact);
-  if (!validation) {
-    return false;
-  }
+  // let validation = validateFormInput(contact);
+  // if (!validation) {
+  //   return false;
+  // }
 
   contactsState.push(contact);
   localStorage.setItem("contacts", JSON.stringify(contactsState));
@@ -89,7 +85,6 @@ const addContact = (event) => {
   contacts.appendChild(listItem);
 
     name.value = '',
-    address.value = '',
     email.value = '',
     phoneNumber.value = ''
 };
@@ -179,13 +174,13 @@ addAddressForm.addEventListener('submit', addContact);
 };
 
 // Address Form
-for (let i = 0; i < addressFormItems.length; i++) {
-    addressFormItems[i].addEventListener('input', () => {
-      if (errorMessage.textContent.length > 0) {
-              errorMessage.innerHTML = '';
-      }
-    });
-};
+// for (let i = 0; i < addressFormItems.length; i++) {
+//     addressFormItems[i].addEventListener('input', () => {
+//       if (errorMessage.textContent.length > 0) {
+//               errorMessage.innerHTML = '';
+//       }
+//     });
+// };
 
 const renderContact = (contactsState) => {
   for (const contact of contactsState) {
